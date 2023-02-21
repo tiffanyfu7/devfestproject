@@ -9,31 +9,34 @@ const firebaseConfig = {
   measurementId: "G-HX1LXBLZR5"
 };
 
-//initialize firebase
-firebase.initializeApp(firebaseConfig)
+// initialize firebase
+firebase.initializeApp(firebaseConfig);
 
-//reference your database
-var contactFormDB = firebase.database().ref('contactForm');
+// reference your database
+var tripFormDB = firebase.database().ref("tripForm");
 
-document.getElementById("tripForm").addEventListener("submit",submitForm);
+document.getElementById("tripForm").addEventListener("submit", submitForm);
 
-function submitForm(e){
-  e.preventDefult();
+function submitForm(e) {
+  e.preventDefault();
 
   var tripName = getElementVal("tripName");
   var tripDate = getElementVal("tripDate");
 
-  console.log(tripName, tripDate);
+  saveTripInfo(tripName, tripDate);
+
+  //open to new page with trip info
 }
 
-const getElementVal = (id) +> {
-  return document. getElementById(id).value;
-}
-// function writeData() {
-//     firebase.database().ref("user").set( {
-//             TripName: document.getElementById("tripName").value,
-//             Date: document.getElementById("date").value,
-//         }
-//
-//     );
-//
+const saveTripInfo = (tripName, tripDate) => {
+  var newTripForm = tripFormDB.push();
+
+  newTripForm.set({
+    name : tripName,
+    date : tripDate,
+  });
+};
+
+const getElementVal = (id) => {
+  return document.getElementById(id).value;
+};
