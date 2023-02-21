@@ -4,7 +4,21 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href=styles.css>
 <body>
-    <h1> HELO </h1>
-    <h2> serena and tiffany's amazing dev fest project </h2>
+  <form action="" id="tripForm">
+    <div class="mb-3">
+        <label for="inputTripName" class="form-label">Enter Trip Name</label>
+        <input type="text" class="form-control" id="tripName" aria-describedby="emailHelp">
+    </div>
+    <div class="mb-3">
+        <label for="inputDate" class="form-label">Enter Date (MM/DD/YY)</label>
+        <input type="date" class="form-control" id="tripDate">
+    </div>
+    <button type="submit" onclick="writeData()" class="btn btn-lg btn-success">Upload</button>
+  </form>
 </body>
+
+<!--CDN Link-->
+<script src = "https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script>
+<script scr = "app.js"></script>
+
 </html>
