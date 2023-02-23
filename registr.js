@@ -25,6 +25,9 @@ function submitForm(e) {
   var password = getElementVal("psw");
 
   saveTripInfo(name, email, password);
+  document.getElementById("userForm").reset();
+
+  window.location.replace("index.html");
 }
 
 const saveTripInfo = (name, email, password) => {

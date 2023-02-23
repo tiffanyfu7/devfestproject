@@ -9,15 +9,18 @@
     <link rel="stylesheet" href="./styles.css">
 </head>
 
+<div id="like_button_container"></div>
+
 <body>
+  
     <div class="container">
         <form action="" id="tripForm">
             <div class="inputBox">
-                <input type="text" id="tripName" placeholder="Enter Trip Name" />
+                <input type="text" id="tripName" placeholder="Enter Trip Name" required />
             </div>
 
             <div class="inputBox">
-                <input type="date" id="tripDate" placeholder="Enter Trip Date" />
+                <input type="date" id="tripDate" placeholder="Enter Trip Date" required />
             </div>
 
             <div class="inputBox">
@@ -28,8 +31,12 @@
 
     <a href=registr.html>Register Here</a>
 
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+  
     <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script>
     <script src="./app.js"></script>
+    <script src="like_button.js"></script>
 </body>
 
 </html>
