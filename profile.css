@@ -33,7 +33,21 @@ body {
 .a_expense_container {}
 
 #add_expense_button {
+  background-color: white; /* Green */
+  border: none;
+  border-radius: 10px;
+  color: black;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  font: inherit;
   width: 80%;
+}
+
+#add_expense_button:hover {
+  background-color: rgb(200,200,200); /* turn grey */
 }
 
 .owe_container {
