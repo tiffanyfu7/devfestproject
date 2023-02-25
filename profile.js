@@ -1,3 +1,5 @@
+//import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-app.js";
+
 const firebaseConfig = {
   apiKey: "AIzaSyA7G8lJl_6mHTfIDcNXwRsLurGAeY23YsU",
   authDomain: "devfest-db40c.firebaseapp.com",
@@ -12,17 +14,13 @@ const firebaseConfig = {
 // initialize firebase
 firebase.initializeApp(firebaseConfig);
 
-var userDataRef = firebase.database().ref("Users").orderByKey();
-userDataRef.once("value", (snapshot) => {
-      var key = childSnapshot.key;
-      var childData = childSnapshot.val();              // childData will be the actual contents of the child
+var userDataRef = firebase.database().ref("TestUsers");
 
-      var name_val = childSnapshot.val().name;
-      console.log(name_val);
+userDataRef.once("value") //change?
+  .then(function(snapshot) {
+    snapshot.forEach(function(childSnapshot) {
+      var name_val = childSnapshot.key;
 
-      document.getElementById("user_name").innerHTML = snapshot.val().key.value;
+      $("#group_names").append("<p>" + name_val + "</p>");
   });
- userDataref.on('child_added', (snapshot) => {
-  console.log(snapshot.key);
- });
-
+});
