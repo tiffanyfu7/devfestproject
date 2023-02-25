@@ -20,18 +20,23 @@ const firebaseConfig = {
   function submitForm(e) {
     e.preventDefault();
   
-    var expense = getElementVal("username");
-    var payer = getElementVal("name");
-    var password = getElementVal("psw");
+    var expense = getElementVal("expense");
+    var payer = getElementVal("payer");
+    var date = getElementVal("date");
+    var amount = getElementVal("amount");
+    var type = getElementVal("type");
+    var splitMethod = document.querySelector('#split');
   
-    saveTripInfo(username, name, password);
+    saveExpenseInfo(expense, payer, date, amount, type, splitMethod);
     document.getElementById("userForm").reset();
   
     window.location.replace("profile.html");
   }
   
-  const saveTripInfo = (username, name, password) => {
-    var newUserForm = expenseFormDB.child(username);
+  const saveExpenseInfo = (expense, payer, date, amount, type, splitMethod) => {
+    var newUserForm = expenseFormDB.push().set({
+      
+    });
   
     newUserForm.set({
       key: username,
