@@ -13,7 +13,7 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 
 // reference your database
-var userFormDB = firebase.database().ref("Users");
+var expenseFormDB = firebase.database().ref("Users");
 
 document.getElementById("userForm").addEventListener("submit", submitForm);
 
@@ -27,11 +27,11 @@ function submitForm(e) {
   saveTripInfo(username, name, password);
   document.getElementById("userForm").reset();
 
-  window.location.replace("index.html");
+  window.location.replace("profile.html");
 }
 
 const saveTripInfo = (username, name, password) => {
-  var newUserForm = userFormDB.child(username);
+  var newUserForm = expenseFormDB.child(username);
 
   newUserForm.set({
     key: username,
