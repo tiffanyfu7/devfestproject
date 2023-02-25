@@ -1,0 +1,63 @@
+body {
+  font-family: 'Poppins', serif;
+}
+
+.side_profile {
+  position:absolute;
+  left:0px;
+  top: 0px;
+  background-color:red;
+  width:20%;
+}
+
+.side_group_names {
+  position:absolute;
+  right:0px;
+  top: 0px;
+  background-color:blue;
+  width:20%;
+}
+
+.main_container{
+  margin-top: 5%;
+  background-color: orange;
+  margin-left:20%;
+  margin-right:20%;
+}
+
+.main_container_elements{
+  text-align: center;
+  margin:auto;
+}
+
+.a_expense_container {}
+
+#add_expense_button {
+  width: 80%;
+}
+
+.owe_container {
+  display: flex;
+}
+
+.owe_column {
+  flex: 50%;
+  padding: 16px;
+  height: 250px;
+}
+
+#i_owe{
+  background-color: pink;
+}
+
+#owe_me{
+  background-color: purple;
+}
+
+.total_spent {
+  background-color: coral;
+}
+
+.expected_spent {
+  background-color: green;
+}

@@ -6,12 +6,58 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile</title>
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
     <link rel="stylesheet" href="./profile.css">
 </head>
 
 <body>
-  <h1 id="user_name">Current User Name</h1>
-  <div id="group_names"></div>
+  <div class="side_profile">
+    <!--profile picture...-->
+    <!--find current user using UID-->
+    <h1 id="user_name">Current User Info</h1>
+    <!--email-->
+  </div>
+
+  <div class = "main_container">
+    <div class = "main_container_elements">
+      <!--allow user to edit-->
+      <h1 id="trip_title"> TRIP TITLE </h1>
+
+      <div class = "add_expense_container">
+        <a href= "addexpense.html">
+          <button id="add_expense_button"> Add Expense </button>
+        </a>
+      </div>
+
+      <div class="owe_container">
+    	  <div class="owe_column" id="owe_me">
+    	   <h2> I Owe </h2>
+    	   <p> some contents in column 1</p>
+    	  </div>
+    	  <div class="owe_column" id="i_owe">
+    	     <h2>Owe To Me</h2>
+    	     <p> Some contents in column 2 </p>
+        </div>
+	    </div>
+
+      <div class="total_spent">
+        <h2> Total Spent </h2>
+        <h2 id="total_amount"> Get Amount </h2>
+      </div>
+
+      <div class="expected_spent">
+        <h2> Expected Total Spent </h2>
+        <h2 id="expected_amount"> Get Amount </h2>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="side_group_names">
+    <h1> Group Names </h1>
+    <!--get group names from database-->
+    <div id="group_names"></div>
+  </div>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script>

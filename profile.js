@@ -20,7 +20,7 @@ userDataRef.once("value") //change?
   .then(function(snapshot) {
     snapshot.forEach(function(childSnapshot) {
       var name_val = childSnapshot.key;
-
-      $("#group_names").append("<p>" + name_val + "</p>");
+      if(name_val == "serena")
+        $("#group_names").append("<p>" + name_val + "</p>");
   });
 });
