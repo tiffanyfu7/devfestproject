@@ -13,29 +13,29 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 
 // reference your database
-var userFormDB = firebase.database().ref("userForm");
+var userFormDB = firebase.database().ref("Users");
 
 document.getElementById("userForm").addEventListener("submit", submitForm);
 
 function submitForm(e) {
   e.preventDefault();
 
+  var username = getElementVal("username");
   var name = getElementVal("name");
-  var email = getElementVal("email");
   var password = getElementVal("psw");
 
-  saveTripInfo(name, email, password);
+  saveTripInfo(username, name, password);
   document.getElementById("userForm").reset();
 
   window.location.replace("index.html");
 }
 
-const saveTripInfo = (name, email, password) => {
-  var newUserForm = userFormDB.push();
+const saveTripInfo = (username, name, password) => {
+  var newUserForm = userFormDB.child(username);
 
   newUserForm.set({
+    key: username,
     name : name,
-    email : email,
     password : password,
   });
 };

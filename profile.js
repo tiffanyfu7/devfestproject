@@ -12,7 +12,7 @@ const firebaseConfig = {
 // initialize firebase
 firebase.initializeApp(firebaseConfig);
 
-var userDataRef = firebase.database().ref("UserForm").orderByKey();
+var userDataRef = firebase.database().ref("Users").orderByKey();
 userDataRef.once("value", (snapshot) => {
       var key = childSnapshot.key;
       var childData = childSnapshot.val();              // childData will be the actual contents of the child
@@ -22,8 +22,7 @@ userDataRef.once("value", (snapshot) => {
 
       document.getElementById("user_name").innerHTML = snapshot.val().key.value;
   });
- });
  userDataref.on('child_added', (snapshot) => {
   console.log(snapshot.key);
  });
-}());
+
