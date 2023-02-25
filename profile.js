@@ -1,5 +1,4 @@
 //import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-app.js";
-
 const firebaseConfig = {
   apiKey: "AIzaSyA7G8lJl_6mHTfIDcNXwRsLurGAeY23YsU",
   authDomain: "devfest-db40c.firebaseapp.com",
@@ -14,13 +13,20 @@ const firebaseConfig = {
 // initialize firebase
 firebase.initializeApp(firebaseConfig);
 
+//get current user's username
+const queryString = window.location.search;
+const urlParams = new URLSearchParams(queryString);
+const current_username = urlParams.get('name')
+console.log(current_username);
+document.getElementById("current_user").innerHTML=current_username;
+
 var userDataRef = firebase.database().ref("TestUsers");
 
+//add add
 userDataRef.once("value") //change?
   .then(function(snapshot) {
     snapshot.forEach(function(childSnapshot) {
       var name_val = childSnapshot.key;
-      if(name_val == "serena")
-        $("#group_names").append("<p>" + name_val + "</p>");
+      $("#group_names").append("<p>" + name_val + "</p>");
   });
 });

@@ -17,6 +17,13 @@ var tripDB = firebase.database().ref("Trips");
 
 document.getElementById("userForm").addEventListener("submit", submitForm);
 
+function redirectHandler() {
+  let formName = document.getElementById("username").value;
+  let formNameQP = "name="+formName;
+  console.log("profile.html?"+formNameQP);
+  window.location.replace("profile.html?"+formNameQP);
+}
+
 function submitForm(e) {
   e.preventDefault();
 
@@ -26,8 +33,6 @@ function submitForm(e) {
 
   saveTripInfo(username, name, password);
   document.getElementById("userForm").reset();
-
-  window.location.replace("profile.html");
 }
 
 const saveTripInfo = (username, name, password) => {
