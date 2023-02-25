@@ -8,12 +8,12 @@ const firebaseConfig = {
   appId: "1:974911936807:web:7ea2b7b8f510f2691cf102",
   measurementId: "G-HX1LXBLZR5"
 };
-
 // initialize firebase
 firebase.initializeApp(firebaseConfig);
 
 // reference your database
-var expenseFormDB = firebase.database().ref("Users");
+var userFormDB = firebase.database().ref("Users");
+var tripDB = firebase.database().ref("Trips");
 
 document.getElementById("userForm").addEventListener("submit", submitForm);
 
@@ -31,13 +31,18 @@ function submitForm(e) {
 }
 
 const saveTripInfo = (username, name, password) => {
-  var newUserForm = expenseFormDB.child(username);
 
-  newUserForm.set({
+  var newUser = {
     key: username,
     name : name,
     password : password,
-  });
+    trips: {trip1: {key: "trip1"}}
+  };
+
+  userFormDB.child(username).set(newUser);
+
+  tripDB.child('/trip1/participants/' + username).set({name: name});
+
 };
 
 const getElementVal = (id) => {

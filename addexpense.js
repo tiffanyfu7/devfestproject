@@ -20,8 +20,8 @@ const firebaseConfig = {
   function submitForm(e) {
     e.preventDefault();
   
-    var username = getElementVal("username");
-    var name = getElementVal("name");
+    var expense = getElementVal("username");
+    var payer = getElementVal("name");
     var password = getElementVal("psw");
   
     saveTripInfo(username, name, password);

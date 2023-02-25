@@ -1,0 +1,10 @@
+{
+    "configurations": [
+        {
+            "type": "chrome",
+            "name": "http:///Users/serenaw/Documents/GitHub/devfestproject/registr.html",
+            "request": "launch",
+            "url": "http:///Users/serenaw/Documents/GitHub/devfestproject/registr.html"
+        }
+    ]
+}
