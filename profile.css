@@ -69,7 +69,7 @@ body {
 #i_owe{
   padding:20px;
   border-radius: 10px;
-  background-color: pink;
+  background-color: rgb(200,120,200);
 }
 
 #owe_me{
