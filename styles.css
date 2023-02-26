@@ -11,6 +11,11 @@ body {
   font-family:"Be Vietnam Pro", serif;
 }
 
+footer {
+  position: sticky;
+  text-align: center;
+}
+
 .container{
   text-align: center;
   width: 58%;
@@ -41,24 +46,30 @@ body {
   height: 10px;
 }
 
-.go_back {
-  text-align: left;
-}
+.go_back { text-align: left;}
 
 a {
   text-decoration: none;
   font-size: 20px;
 }
 
-a:hover { font-weight: bold; }
+a:hover { font-weight: bolder; }
 
 button {
-
+  text-decoration: none;
+  font: inherit;
+  background-color: rgba(210, 230, 255,100);
+  border: none;
+  padding: 5px;
+  border-radius: 2px;
 }
 
-button:hover{}
+button:hover{
+  background-color: rgb(190, 210, 235);
+}
 
 #welcome_title {
+  padding-top: 5%;
   font-size: 70px;
 }
 
