@@ -9,9 +9,7 @@ const firebaseConfig = {
     measurementId: "G-HX1LXBLZR5"
   };
 
-const loginForm = document.getElementById("login-form");
-const loginButton = document.getElementById("login-form-submit");
-const loginErrorMsg = document.getElementById("login-error-msg");
+const loginForm = document.getElementById("loginForm");
 
   // initialize firebase
   firebase.initializeApp(firebaseConfig);
@@ -24,19 +22,20 @@ const loginErrorMsg = document.getElementById("login-error-msg");
 
   function submitForm(e) {
     e.preventDefault();
-    const username = loginForm.username.value;
-    const password = loginForm.password.value;
-  
+    var username = getElementVal("username");
+    var password = getElementVal("psw");
+
     // if (password == verif) {
     //   saveTripInfo(username, name, password);
     //   document.getElementById("userForm").reset();
     // }
-
+    alert("hello"); 
     userDB.once("value") //change?
       .then(function(snapshot) {
-        var user = snapshot.child(username + "/password");
-        if (password = user.val()) {
-            alert("successful sign in")
+        var user = snapshot.child(username).val();
+        var psw = user["password"];
+        if ("abc" == psw) {
+            alert("successful sign in");
         } else {
           alert("failed login");
         }
