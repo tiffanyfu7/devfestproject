@@ -17,17 +17,18 @@
     <img src="./images/profile.png" alt="Profile Picture" width="70px">
     <h2 id="current_user"> </h2>
     <p> Edit Profile </p>
+    <a href="index.html" class="go_back"> Log Out </a>
     <!--email-->
   </div>
 
   <div class = "main_container">
     <div class = "main_container_elements">
       <!--allow user to edit-->
-      <h1 id="trip_title" style="font-size:50px"> TRIP TITLE </h1>
+      <h1 id="trip_title" style="font-size:70px"> TRIP TITLE </h1>
 
       <div class = "add_expense_container">
         <a href= "addexpense.html">
-          <button id="add_expense_button"> Add Expense </button>
+          <button id="add_expense_button"> + Add Expense </button>
         </a>
       </div>
 
@@ -44,12 +45,14 @@
 
       <div class="total_spent">
         <h2> Total Spent </h2>
-        <h2 id="total_amount"> Get Amount </h2>
+        <!--use js and firebase to get amount-->
+        <p id="total_amount"> Get Amount </p>
       </div>
 
       <div class="expected_spent">
         <h2> Expected Total Spent </h2>
-        <h2 id="expected_amount"> Get Amount </h2>
+        <!--use js and firebase to get amount-->
+        <p id="expected_amount"> Get Amount </p>
       </div>
 
     </div>

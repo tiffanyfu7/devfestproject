@@ -5,6 +5,7 @@ body {
   height: 100vh;
   display: block;
   background-image: url(./images/background.png);
+  background-size:cover;
   border: 0;
   background-color: rgba(210, 230, 255,100);
   font-family:"Be Vietnam Pro", serif;
