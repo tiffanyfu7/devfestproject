@@ -11,6 +11,8 @@ const firebaseConfig = {
 
 const loginForm = document.getElementById("loginForm");
 
+var passwordMatch = false;
+
   // initialize firebase
   firebase.initializeApp(firebaseConfig);
 
@@ -22,43 +24,45 @@ const loginForm = document.getElementById("loginForm");
 
   function submitForm(e) {
     e.preventDefault();
-    var username = document.getElementById("username");
-    var password = document.getElementById("psw");
+    var username = getElementVal("username");
+    var password = getElementVal("psw");
     console.log(username);
     console.log(password);
 
-    // if (password == verif) {
-    //   saveTripInfo(username, name, password);
-    //   document.getElementById("userForm").reset();
-    // }
-    alert("hello");
-    userDB.once("value") //change?
+    userDB.once("value") 
       .then(function(snapshot) {
         var user = snapshot.child(username).val();
-        var psw = user["password"];
-        if ("abc" == psw) {
-            alert("successful sign in");
-        } else {
-          alert("failed login");
+        if (user != null) {
+          var psw = user["password"];
+          console.log("psw = password is: "+ (psw === password));
+          if(psw != password) {
+            alert("Incorrect password, try again");
+          }
+          else {
+            passwordMatch = true;
+          }
         }
-
         document.getElementById("loginForm").reset();
-    // if (username === "user" && password === "web_dev") {
-    //     alert("You have successfully logged in.");
-    //     location.reload();
-    // } else {s
-    //     loginErrorMsg.style.opacity = 1;
-    // }
 })
 
-  }
+  };
+  const getElementVal = (id) => {
+    return document.getElementById(id).value;
+  };
 
-function redirectHandler() {
-  let formName = document.getElementById("username").value;
-  let password = document.getElementById("psw").value;
+  function redirectHandler() {
+    console.log("Passwordmatch is " + passwordMatch)
+    let formName = document.getElementById("username").value;
+    let password = document.getElementById("psw").value;
+
+
   if(formName != '' && password != '') {
-    let formNameQP = "name="+formName;
-    console.log("profile.html?"+formNameQP);
-    window.location.replace("profile.html?"+formNameQP);
+    if (!passwordMatch) {
+      alert("Incorrect password or username. Try again.");
+    } else {
+      let formNameQP = "name="+formName;
+      console.log("profile.html?"+formNameQP);
+      window.location.replace("profile.html?"+formNameQP);
+    }
   }
-}
+  };
