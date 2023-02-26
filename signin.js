@@ -22,8 +22,10 @@ const loginForm = document.getElementById("loginForm");
 
   function submitForm(e) {
     e.preventDefault();
-    var username = getElementVal("username");
-    var password = getElementVal("psw");
+    var username = document.getElementById("username");
+    var password = document.getElementById("psw");
+    console.log(username);
+    console.log(password);
 
     // if (password == verif) {
     //   saveTripInfo(username, name, password);
