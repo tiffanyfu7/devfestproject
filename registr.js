@@ -29,21 +29,21 @@ function submitForm(e) {
     saveTripInfo(username, name, password);
     document.getElementById("userForm").reset();
   }
-  
+
 }
 
 const saveTripInfo = (username, name, password) => {
 
   var newUser = {
     key: username,
-    name : name,
-    password : password,
-    trips: {trip1: {key: "trip1"}}
+    name: name,
+    password: password,
+    trips: { trip1: { key: "trip1" } }
   };
 
   userFormDB.child(username).set(newUser);
 
-  tripDB.child('/trip1/participants/' + username).set({name: name});
+  tripDB.child('/trip1/participants/' + username).set({ name: name });
 
 };
 
@@ -57,15 +57,15 @@ function redirectHandler() {
   let psw = document.getElementById("psw").value;
   let pswRepeat = document.getElementById("psw-repeat").value;
 
-  if(formName != '' && name != '' && psw != '' && pswRepeat !='') {
+  if (formName != '' && name != '' && psw != '' && pswRepeat != '') {
     if (psw != pswRepeat) {
       alert("Passwords do not match, try again.");
-    } else{
-      let formNameQP = "name="+formName;
-      console.log("profile.html?"+formNameQP);
-      window.location.replace("profile.html?"+formNameQP);
+    } else {
+      let formNameQP = "name=" + formName;
+      console.log("profile.html?" + formNameQP);
+      window.location.replace("profile.html?" + formNameQP);
     }
   }
-  
-  
+
+
 }

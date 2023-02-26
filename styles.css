@@ -5,10 +5,10 @@ body {
   height: 100vh;
   display: block;
   background-image: url(./images/background.png);
-  background-size:cover;
+  background-size: cover;
   border: 0;
-  background-color: rgba(210, 230, 255,100);
-  font-family:"Be Vietnam Pro", serif;
+  background-color: rgba(210, 230, 255, 100);
+  font-family: "Be Vietnam Pro", serif;
 }
 
 footer {
@@ -16,23 +16,23 @@ footer {
   text-align: center;
 }
 
-.container{
+.container {
   text-align: center;
   width: 58%;
-  margin-top:10%;
-  margin-left:20%;
+  margin-top: 10%;
+  margin-left: 20%;
   height: 50%;
   padding: 20px;
   border-radius: 20px;
-  box-shadow:  0px 5px 25px rgba(0,0,0,0.2);
+  box-shadow: 0px 5px 25px rgba(0, 0, 0, 0.2);
   display: block;
   justify-content: space-evenly;
   align-items: center;
   flex-direction: column;
-  background-color:  rgb(250, 250, 250);
+  background-color: rgb(250, 250, 250);
 }
 
-.container form{
+.container form {
   width: 50%;
   height: 100%;
   display: flex;
@@ -46,25 +46,29 @@ footer {
   height: 10px;
 }
 
-.go_back { text-align: left;}
+.go_back {
+  text-align: left;
+}
 
 a {
   text-decoration: none;
   font-size: 20px;
 }
 
-a:hover { font-weight: bolder; }
+a:hover {
+  font-weight: bolder;
+}
 
 button {
   text-decoration: none;
   font: inherit;
-  background-color: rgba(210, 230, 255,100);
+  background-color: rgba(210, 230, 255, 100);
   border: none;
   padding: 5px;
   border-radius: 2px;
 }
 
-button:hover{
+button:hover {
   background-color: rgb(190, 210, 235);
 }
 
@@ -73,6 +77,4 @@ button:hover{
   font-size: 70px;
 }
 
-#welcome_title:hover{
-
-}
+#welcome_title:hover {}

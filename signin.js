@@ -46,7 +46,7 @@ function submitForm(e) {
       }
       document.getElementById("loginForm").reset();
     })
-    
+
 
 };
 const getElementVal = (id) => {

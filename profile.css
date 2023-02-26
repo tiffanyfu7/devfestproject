@@ -6,31 +6,37 @@ body {
   height: 100vh;
   display: block;
   border: 0;
-  background-color: rgba(210, 230, 255,100);
-  font-family:"Be Vietnam Pro", serif;
+  background-color: rgba(210, 230, 255, 100);
+  font-family: "Be Vietnam Pro", serif;
 }
 
-.side_profile,.side_group_names {
-  padding:5px;
-  position:absolute;
+.side_profile,
+.side_group_names {
+  padding: 5px;
+  position: absolute;
   top: 0px;
-  background-color:white;
+  background-color: white;
   border-radius: 5px;
-  width:18%;
+  width: 18%;
 }
 
-.side_profile {left:0px;}
-.side_group_names { right:0px;}
+.side_profile {
+  left: 0px;
+}
 
-.main_container{
+.side_group_names {
+  right: 0px;
+}
+
+.main_container {
   margin-top: 5%;
-  margin-left:20%;
-  margin-right:20%;
+  margin-left: 20%;
+  margin-right: 20%;
 }
 
-.main_container_elements{
+.main_container_elements {
   text-align: center;
-  margin:auto;
+  margin: auto;
 }
 
 .a_expense_container {}
@@ -51,7 +57,8 @@ body {
 }
 
 #add_expense_button:hover {
-  background-color: rgb(200,200,200); /* turn grey */
+  background-color: rgb(200, 200, 200);
+  /* turn grey */
 }
 
 .owe_container {
@@ -66,23 +73,24 @@ body {
   height: 250px;
 }
 
-#i_owe{
-  padding:20px;
+#i_owe {
+  padding: 20px;
   border-radius: 10px;
-  background-color: rgb(200,120,200);
+  background-color: rgb(200, 120, 200);
 }
 
-#owe_me{
-  padding:20px;
+#owe_me {
+  padding: 20px;
   border-radius: 10px;
   background-color: pink;
 }
 
-.total_spent,.expected_spent {
+.total_spent,
+.expected_spent {
   background-color: white;
   border: none;
   border-radius: 10px;
   color: black;
-  margin:auto;
-  width:95%
+  margin: auto;
+  width: 95%
 }

@@ -32,8 +32,8 @@ const saveTripInfo = (tripName, tripDate) => {
   var newTripForm = tripFormDB.push();
 
   newTripForm.set({
-    name : tripName,
-    date : tripDate,
+    name: tripName,
+    date: tripDate,
   });
 };
 
