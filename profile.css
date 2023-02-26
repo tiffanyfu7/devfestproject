@@ -52,6 +52,7 @@ body {
 
 .owe_container {
   display: flex;
+  text-align: left;
 }
 
 .owe_column {

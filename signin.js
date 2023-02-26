@@ -15,3 +15,10 @@ loginButton.addEventListener("click", (e) => {
         loginErrorMsg.style.opacity = 1;
     }
 })
+
+function redirectHandler() {
+  let formName = document.getElementById("username").value;
+  let formNameQP = "name="+formName;
+  console.log("profile.html?"+formNameQP);
+  window.location.replace("profile.html?"+formNameQP);
+}
