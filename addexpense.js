@@ -132,17 +132,18 @@ const saveExpenseInfo = (expense, payer, date, amount, type, splitMethod) => {
     return document.getElementById(id).value;
   };
 
-  const queryString = window.location.search;
-  const urlParams = new URLSearchParams(queryString);
-  const current_username = urlParams.get('name');
-  console.log(current_username);
-
-  function redirectHandler(){
-    let formNameQP = "name="+current_username;
-    window.location.replace("profile.html?"+formNameQP);
-  }
 =======
 const getElementVal = (id) => {
   return document.getElementById(id).value;
 };
 >>>>>>> Stashed changes
+
+const queryString = window.location.search;
+const urlParams = new URLSearchParams(queryString);
+const current_username = urlParams.get('name');
+console.log(current_username);
+
+function redirectHandler(){
+  let formNameQP = "name="+current_username;
+  window.location.replace("profile.html?"+formNameQP);
+}
