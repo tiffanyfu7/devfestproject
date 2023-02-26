@@ -24,24 +24,24 @@ var userDB = firebase.database().ref("Users");
 document.getElementById("expenseForm").addEventListener("submit", submitForm);
 
 function submitForm(e) {
-  e.preventDefault();
+  e.preventDefault();
 
-  var expense = getElementVal("expense");
-  var payer = getElementVal("payer");
-  var date = getElementVal("date");
-  var amount = getElementVal("amount");
-  var type = getElementVal("type");
-  var splitMethod = document.querySelector('#split').value;
+  var expense = getElementVal("expense");
+  var payer = getElementVal("payer");
+  var date = getElementVal("date");
+  var amount = getElementVal("amount");
+  var type = getElementVal("type");
+  var splitMethod = document.querySelector('#split').value;
 
-  saveExpenseInfo(expense, payer, date, amount, type, splitMethod);
-//   document.getElementById("expenseForm").reset();
+  saveExpenseInfo(expense, payer, date, amount, type, splitMethod);
+  //   document.getElementById("expenseForm").reset();
 
-  let formNameQP = "name="+current_username;
-  window.location.replace("profile.html?"+formNameQP);
+  let formNameQP = "name=" + current_username;
+  window.location.replace("profile.html?" + formNameQP);
 }
 
 const saveExpenseInfo = (expense, payer, date, amount, type, splitMethod) => {
-
+  console.log('testing');
   var payment = 0;
   var owe = {};
   userDB.once("value") //change?
@@ -54,33 +54,33 @@ const saveExpenseInfo = (expense, payer, date, amount, type, splitMethod) => {
         var username = childSnapshot.key;
         var name = user["name"];
         if (username != payer) {
-          owe.add({[username]: {name: name, amount: payment}});
+          owe.add({ [username]: { name: name, amount: payment } });
         } else {
-          owe.add({[username]: {name: name, amount: 0}});
+          owe.add({ [username]: { name: name, amount: 0 } });
         }
       });
     });
-
-  var newExpenseForm = expenseFormDB.push().set({
-    name: expense,
-    participants: owe,
-    payer: {spent: payment, [payer]: {key: payer}},
-    trip: "trip1",
-    type: type,
-    date: date,
-    total: amount,
-    splitMethod: splitMethod
-  });
+     
+    var newExpenseForm = expenseFormDB.push().set({
+      name: expense,
+      participants: owe,
+      payer: { spent: payment, [payer]: { key: payer } },
+      trip: "trip1",
+      type: type,
+      date: date,
+      total: amount,
+      splitMethod: splitMethod
+    });
 
 };
 
 const getElementVal = (id) => {
-  return document.getElementById(id).value;
+  return document.getElementById(id).value;
 };
 
 console.log(current_username);
 
-function redirectHandler(){
-  let formNameQP = "name="+current_username;
-  window.location.replace("profile.html?"+formNameQP);
+function redirectHandler() {
+  let formNameQP = "name=" + current_username;
+  window.location.replace("profile.html?" + formNameQP);
 }
