@@ -13,7 +13,7 @@ const loginForm = document.getElementById("loginForm");
 
   // initialize firebase
   firebase.initializeApp(firebaseConfig);
-  
+
   // reference your database
   var userDB = firebase.database().ref("Users");
 
@@ -29,7 +29,7 @@ const loginForm = document.getElementById("loginForm");
     //   saveTripInfo(username, name, password);
     //   document.getElementById("userForm").reset();
     // }
-    alert("hello"); 
+    alert("hello");
     userDB.once("value") //change?
       .then(function(snapshot) {
         var user = snapshot.child(username).val();
@@ -48,9 +48,9 @@ const loginForm = document.getElementById("loginForm");
     //     loginErrorMsg.style.opacity = 1;
     // }
 })
-    
+
   }
-  
+
 function redirectHandler() {
   let formName = document.getElementById("username").value;
   let password = document.getElementById("psw").value;

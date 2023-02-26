@@ -10,7 +10,7 @@
 </head>
 
 <body>
-  <form action="" id="expenseForm">
+  <form action="" id="expenseForm" style="width:60%;margin:auto;">
     <div class="container">
       <h1>Add Expense</h1>
       <p>Fill in the information below to add an expense.</p>
@@ -18,25 +18,29 @@
 
       <label for="expense"><b>Expense Name</b></label>
       <input type="text" placeholder="What's the expense for?" name="expense" id="expense" required>
+      <div class="break"></div>
 
       <!-- will delete eventually, need to be able to track current user-->
       <label for="payer"><b>Who Paid?</b></label>
       <input type="text" placeholder="Payer username" name="payer" id="payer" required>
+      <div class="break"></div>
 
       <label for="date"><b>Date</b></label>
       <div class="inputBox">
         <input type="date" id="date" placeholder="Date expense was made" required />
-        </div>
+      </div>
+      <div class="break"></div>
 
       <label for="amount"><b>Amount Paid</b></label>
       <input type="money" placeholder="Enter Total Amount" name="amount" id="amount" required>
+      <div class="break"></div>
 
       <label for="type"><b>Expense Type</b></label>
       <input type="type" placeholder="Enter Expense Type" name="type" id="type" required>
-
+      <div class="break"></div>
 
       <!-- NEED TO ADD PARTICIPANTS
-            get list of people in the trip (for future) 
+            get list of people in the trip (for future)
     -->
 
       <label for="split"><b>Select split method</b></label>
@@ -49,12 +53,14 @@
         <!-- code later -->
          <option value="custom">Custom Split</option>
       </select>
-
-      <hr>
+      <div class="break" style="height: 20px"></div>
 
       <button type="submit" class="expensebtn">Add Expense</button>
+      <div class="break" style="height:20px"></div>
+
+      <hr>
     </div>
-    
+
   </form>`
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script>
