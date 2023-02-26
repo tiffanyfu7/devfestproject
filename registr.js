@@ -23,9 +23,13 @@ function submitForm(e) {
   var username = getElementVal("username");
   var name = getElementVal("name");
   var password = getElementVal("psw");
+  var verif = getElementVal("psw-repeat");
 
-  saveTripInfo(username, name, password);
-  document.getElementById("userForm").reset();
+  if (password == verif) {
+    saveTripInfo(username, name, password);
+    document.getElementById("userForm").reset();
+  }
+  
 }
 
 const saveTripInfo = (username, name, password) => {
@@ -49,9 +53,19 @@ const getElementVal = (id) => {
 
 function redirectHandler() {
   let formName = document.getElementById("username").value;
-  if(formName != '') {
-    let formNameQP = "name="+formName;
-    console.log("profile.html?"+formNameQP);
-    window.location.replace("profile.html?"+formNameQP);
+  let name = document.getElementById("name").value;
+  let psw = document.getElementById("psw").value;
+  let pswRepeat = document.getElementById("psw-repeat").value;
+
+  if(formName != '' && name != '' && psw != '' && pswRepeat !='') {
+    if (psw != pswRepeat) {
+      alert("Passwords do not match, try again.");
+    } else{
+      let formNameQP = "name="+formName;
+      console.log("profile.html?"+formNameQP);
+      window.location.replace("profile.html?"+formNameQP);
+    }
   }
+  
+  
 }
