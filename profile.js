@@ -32,7 +32,7 @@ userDataRef.once("value") //change?
       if (childSnapshot.key != current_username) {
         $("#group_names").append("<p>" + name_val + "</p>");
       }
-      
+
   });
 });
 
@@ -40,3 +40,8 @@ currentUserDB.once("value")
 .then(function(snapshot) {
   document.getElementById("current_name").innerHTML=snapshot.val()["name"];
 })
+
+function redirectHandler(){
+  let formNameQP = "name="+current_username;
+  window.location.replace("addexpense.html?"+formNameQP);
+}
