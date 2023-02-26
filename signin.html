@@ -11,27 +11,25 @@
 </head>
 
 <body>
-  <form id="loginForm">
+  <a href="index.html" style="margin-left:10px">Back</a>
+  <form id="loginForm" style="width:60%;margin:auto;">
+    <div class="container">
+      <h1>Log In</h1>
+      <hr>
+
+      <div class="break"></div>
       <label for="username"><b>Username</b></label>
       <input type="text" placeholder="Enter username" name="username" id="username" required>
+      <div class="break"></div>
 
       <label for="psw"><b>Password</b></label>
       <input type="password" placeholder="Enter Password" name="psw" id="psw" required>
+      <div class="break" style="height:20px"></div>
 
       <!-- <button onclick="redirectHandler()" type="submit" id="registerbtn">Sign In</button> -->
       <button type="submit" id="registerbtn">Sign In</button>
   </form>
-    <!-- <h1 id="login-header">Login</h1>
-
-    <div id="login-error-msg-holder">
-      <p id="login-error-msg">Invalid username <span id="error-msg-second-line">and/or password</span></p>
-    </div>
-
-
-      <input type="text" name="username" id="username-field" class="login-form-field" placeholder="Username">
-      <input type="password" name="password" id="password-field" class="login-form-field" placeholder="Password">
-      <input type="submit" value="Login" id="login-form-submit">
-     -->
+   
     <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script>
 </body>
 

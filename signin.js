@@ -11,6 +11,8 @@ const firebaseConfig = {
 
 const loginForm = document.getElementById("loginForm");
 
+var passwordMatch = false;
+
 // initialize firebase
 firebase.initializeApp(firebaseConfig);
 
