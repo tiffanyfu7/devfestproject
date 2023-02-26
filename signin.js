@@ -36,12 +36,13 @@ function submitForm(e) {
         var psw = user["password"];
         console.log("psw = password is: " + (psw === password));
         if (psw != password) {
-          alert("Incorrect password, try again");
+          alert("Incorrect username or password, try again");
         }
         else {
-          alert("correct!");
           window.location.replace("profile.html?" + "name=" + username);
         }
+      } else {
+        alert("Incorrect username or password, try again");
       }
       document.getElementById("loginForm").reset();
     })
