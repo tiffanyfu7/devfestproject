@@ -11,14 +11,16 @@
 
 <body>
   <main id="main-holder">
-    <label for="username"><b>Username</b></label>
-    <input type="text" placeholder="Enter username" name="username" id="username" required>
+    <form>
+      <label for="username"><b>Username</b></label>
+      <input type="text" placeholder="Enter username" name="username" id="username" required>
 
-    <label for="psw"><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="psw" id="psw" required>
-    <!--verify that passwords match?-->
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" id="psw" required>
+      <!--verify that passwords match?-->
 
-    <button onclick="redirectHandler()" type="submit" id="registerbtn">Sign In</button>
+      <button onclick="redirectHandler()" type="submit" id="registerbtn">Sign In</button>
+    </form>
 
     <!-- <h1 id="login-header">Login</h1>
 

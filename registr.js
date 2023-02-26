@@ -49,7 +49,9 @@ const getElementVal = (id) => {
 
 function redirectHandler() {
   let formName = document.getElementById("username").value;
-  let formNameQP = "name="+formName;
-  console.log("profile.html?"+formNameQP);
-  window.location.replace("profile.html?"+formNameQP);
+  if(formName != '') {
+    let formNameQP = "name="+formName;
+    console.log("profile.html?"+formNameQP);
+    window.location.replace("profile.html?"+formNameQP);
+  }
 }

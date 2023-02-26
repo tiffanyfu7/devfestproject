@@ -47,6 +47,7 @@ body {
 }
 
 #add_expense_button:hover {
+  font-size: 20px;
   background-color: rgb(200,200,200); /* turn grey */
 }
 
